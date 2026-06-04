@@ -1,62 +1,158 @@
-# DESCRIPCION-FRANCISCO-NGUA-IWANGOU-AYINGONO
-Soy estudiante de último año de Ingeniería Informática y Gestión de Sistemas con especial interés en redes y soporte técnico. Con 4 años de experiencia gestionando un negocio propio de asistencia técnica, reparación de equipos y recuperación de datos.
+# Tablero Kanban — TFG 📋
 
-#EXPERIENCIA LABORAL
-##EQUATO GUINEAN TRADING COMPANY (EGTC-GROUP)
-Certificado de prácticas profesionales. Departamento de IT
-Ciudad: BATA
-18/07/2022 – 17/09/2022    &    17/07/2023 – 09/09/2023
-Como practicante en el departamento de IT, en la empresa, mi labor era aprender de mis superiores y poner en práctica lo aprendido atendiendo las tareas que me eran asignadas (instalación de S.O, limpieza de equipos, instalación de cámaras y antenas).
+Aplicación web de gestión de tareas tipo Kanban desarrollada con **Angular 21** como herramienta de seguimiento del Trabajo de Fin de Grado: *Plataforma Musical de Guinea Ecuatorial*.
 
-##Asistencia Informática y Diagnóstico Avanzado (AIDA)- Fundador
-Ciudad: DJIBLOHO - OYALA
-He reparado equipos informáticos (ordenadores, dispositivos de almacenamiento, etc.) de un gran número de personas (estudiantes, profesores, administrativos y personal) en un entorno universitario, llegando a obtener el reconocimiento de mejor emprendimiento en la universidad AAUCA.
+**Autor:** Francisco Ngua Iwangou AYINGONO — AAUCA 2026
 
-#FORMACIÓN
-##UNIVERSIDAD AFRO-AMERICANA DE ÁFRICA CENTRAL (AAUCA)
-Ciudad: DJIBLOHO - OYALA
-Cursando la carrera de Ingeniería Informática y Gestión de Sistemas desde 2021. Actualmente estoy en mi último año de carrera. 
+---
 
-##CERTFICADO DE PARTICIPACIÓN EN LOS TALLERES DEL GHD
-Participé en los talleres impartidos por el Gran Hotel Djibloho, en colaboración de BONAFIDE y la AAUCA. Sobre: tecnología informática, redes sociales, ingeniería civil, seguridad y prevención, entre otros.
+## ¿Qué es?
 
-##INSTITUTO SUPERIOR DE FORMACIÓN PROFESIONAL Y LINGÜÍSTICA (INSFOPLIS) 
-Ciudad: BATA
-2019-2020
+Un tablero Kanban interactivo que visualiza el progreso de todas las tareas del TFG organizadas en 4 columnas y 5 fases de desarrollo. Incluye drag & drop, persistencia local y acordeones por fase.
 
-#APTITUDES
-•	Soporte técnico y mantenimiento
-•	Adaptabilidad y capacidad de aprendizaje
-•	Empatía (trato al cliente)
+---
 
-#COMPETENCIAS
-##Conocimientos académicos en;
-•	Java
-•	Python
-•	Desarrollo de páginas Web
-•	Base de Datos (SQL)
-##Habilidad en Cisco Packet Tracer
-##Manejo de Microsoft Office, destacando:
-•	Word 
-•	PowerPoint 
+## Tecnologías
 
-#AFICIONES
-	Aprender sobre soporte técnico
-	Deporte moderado
-	Dibujo artístico
-	Escuchar audiolibros
-	Escuchar música		
+| Componente       | Tecnología                          |
+|------------------|-------------------------------------|
+| Framework        | Angular 21.1.3                      |
+| Drag & Drop      | Angular CDK — `@angular/cdk`        |
+| Estilos          | CSS puro (sin framework)            |
+| Iconos           | SVG inline (Lucide)                 |
+| Persistencia     | `localStorage`                      |
+| Fuente           | Inter (Google Fonts)                |
+| Build            | Angular CLI 21.1.1                  |
 
-#IDIOMAS
-•	Español – Lengua materna
-•	Francés – Nivel B1
-•	Inglés – Nivel A1
+---
 
-#CONTACTO
-TELÉFONO:
-+240-555-237-479
-+240-222-794-014
+## Estructura del tablero
 
-#CORREO ELECTRÓNICO:
-davidngua.iwangou@gmail.com
-asistenciainforamticaeg@gmail.com 
+### Columnas
+
+| Columna       | Descripción                                    |
+|---------------|------------------------------------------------|
+| Backlog       | Tareas pendientes de iniciar                   |
+| En progreso   | Tareas actualmente en desarrollo               |
+| En revisión   | Tareas completadas pendientes de verificación  |
+| Completado    | Tareas finalizadas (agrupadas por fase)        |
+
+### Fases del TFG
+
+| Fase | Nombre       | Tareas |
+|------|--------------|--------|
+| F1   | Análisis     | 6      |
+| F2   | Diseño       | 7      |
+| F3   | Backend      | 20     |
+| F4   | Frontend     | 26     |
+| F5   | Pruebas      | 10     |
+
+---
+
+## Funcionalidades
+
+- **Drag & drop** entre columnas — arrastra desde el handle (⠿) que aparece al pasar el ratón sobre una tarjeta
+- **Acordeones por fase** en la columna Completado — colapsa/expande grupos para reducir el scroll
+- **Filtro por fase** — muestra solo las tareas de F1, F2, F3, F4 o F5
+- **Barra de progreso** en tiempo real — muestra el porcentaje de tareas completadas
+- **Nueva tarea** — botón en el header para añadir tareas personalizadas
+- **Editar / Eliminar** tarjetas — botones visibles al hacer hover
+- **Restaurar** — vuelve al estado inicial del TFG (con confirmación)
+- **Persistencia** en `localStorage` — los cambios se guardan automáticamente entre sesiones
+
+---
+
+## Instalación y arranque
+
+### Requisitos
+
+- Node.js 18+
+- npm 10+
+
+### Pasos
+
+```bash
+# Entrar a la carpeta del proyecto
+cd kanban-tfg
+
+# Instalar dependencias (ya incluidas en node_modules)
+npm install
+
+# Arrancar el servidor de desarrollo
+npm start
+```
+
+La aplicación queda disponible en `http://localhost:4200`.
+
+---
+
+## Comandos disponibles
+
+```bash
+npm start        # Servidor de desarrollo con hot reload
+npm run build    # Compilar para producción (output en /dist)
+npm test         # Ejecutar tests unitarios con Vitest
+npm run watch    # Build en modo watch (desarrollo)
+```
+
+---
+
+## Estructura del código
+
+```
+kanban-tfg/src/app/
+├── app.ts                    # Componente raíz — lógica del tablero
+├── app.html                  # Template — layout completo
+├── app.css                   # Estilos — layout, columnas, tarjetas
+├── models/
+│   └── tarea.model.ts        # Interfaces: Tarea, Columna, FaseTarea
+├── services/
+│   └── kanban.service.ts     # Estado reactivo con signals + localStorage
+└── data/
+    └── tareas-iniciales.ts   # 69 tareas predefinidas del TFG
+```
+
+### Flujo de datos
+
+```
+tareas-iniciales.ts
+       ↓
+KanbanService (signal)  ←→  localStorage
+       ↓
+App component (computed)
+       ↓
+Template (columnas + tarjetas)
+```
+
+---
+
+## Decisiones de diseño
+
+**Scroll por columna, no por página** — cada columna tiene su propio scroll interno (`overflow-y: auto`). El tablero ocupa exactamente `100vh` usando una arquitectura `flex-column` en el componente raíz.
+
+**`overflow-x: visible` en columnas** — permite que el `cdk-drag-preview` (que se adjunta al `<body>` durante el arrastre) sea visible sin quedar recortado por el contenedor.
+
+**Acordeones en "Completado"** — la columna con más tareas (60+) se organiza en 5 grupos colapsables por fase para evitar scroll excesivo.
+
+**Signals de Angular** — el estado del tablero usa `signal()` y `computed()` de Angular 17+ para reactividad sin NgRx.
+
+---
+
+## Licencia
+
+Proyecto académico — TFG 2026. Uso interno.
+
+---
+
+## Contexto del TFG
+
+Este tablero forma parte del Trabajo Fin de Grado **"Plataforma Musical de Guinea Ecuatorial"** de la Universidad Afro-Americana de África Central (AAUCA).
+
+El proyecto principal incluye:
+- **Backend** — 4 microservicios Spring Boot con integración MUNI Dinero
+- **Frontend** — Aplicación Angular 21 con 3 roles (usuario, artista, admin)
+- **Kanban** — Este tablero de seguimiento del desarrollo
+
+**Autor:** Francisco Ngua Iwangou AYINGONO
+- GitHub: [DavidBatton](https://github.com/DavidBatton)
+- Email: davidngua.iwangou@gmail.com
