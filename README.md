@@ -1,6 +1,6 @@
-# Francisco Ngua Iwangou AYINGONO
+# Francisco Ngua IWANGOU AYINGONO
 
-Estudiante de último año de Ingeniería Informática y Gestión de Sistemas en la Universidad Afro-Americana de África Central (AAUCA), con 4 años de experiencia gestionando un negocio propio de asistencia técnica, reparación de equipos y recuperación de datos.
+Ingeniero en Informática y Gestión de Sistemas, con 4 años de experiencia gestionando un negocio propio de asistencia técnica, reparación de equipos y recuperación de datos.
 
 ---
 
